@@ -71,7 +71,6 @@ class SearchBarView: UIView, IconTextFieldDelegate {
     
     lazy var textInput: IconTextField = {
         let view = IconTextField(icon: "search_icon", placeholder: "Search for something...")
-        view.id = "search"
         view.delegate = self
         view.textField.returnKeyType = .search
         return view
@@ -151,26 +150,21 @@ class SearchBarView: UIView, IconTextFieldDelegate {
         isSearchVisible = !isSearchVisible
     }
     
-    func didStartTyping(id: String, text: String) {
+    func didStartTyping(text: String) {
     }
     
-    func didEndTyping(id: String, text: String) {
-        if text.isEmpty {
-            textInput.textField.text = ""
-            updateHeader()
-        }
+    func didEndTyping(text: String) {
     }
     
-    func textDidChange(id: String, text: String) {
+    func textDidChange(text: String) {
         self.delegate?.performSearch(text)
     }
     
-    func didReturnText(id: String, text: String) {
+    func didReturnText(text: String) {
     }
     
-    func didClearText(id: String) {
+    func didClearText() {
         updateHeader()
-        textInput.removeFirstResponder()
         self.delegate?.onClearClicked()
     }
     

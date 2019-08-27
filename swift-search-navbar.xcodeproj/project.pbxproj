@@ -15,6 +15,7 @@
 		4C3E893C2314689300365666 /* IconTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3E893B2314689300365666 /* IconTextField.swift */; };
 		4C3E893E231468A200365666 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3E893D231468A200365666 /* SearchBarView.swift */; };
 		4C3E8940231469CF00365666 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3E893F231469CF00365666 /* UIColor+Extension.swift */; };
+		4CA488872315CD200010246B /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA488862315CD200010246B /* Data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		4C3E893B2314689300365666 /* IconTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTextField.swift; sourceTree = "<group>"; };
 		4C3E893D231468A200365666 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		4C3E893F231469CF00365666 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		4CA488862315CD200010246B /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				4C3E893D231468A200365666 /* SearchBarView.swift */,
 				4C3E89392314684B00365666 /* SearchViewController.swift */,
 				4C3E893F231469CF00365666 /* UIColor+Extension.swift */,
+				4CA488862315CD200010246B /* Data.swift */,
 			);
 			path = "swift-search-navbar";
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C3E893E231468A200365666 /* SearchBarView.swift in Sources */,
+				4CA488872315CD200010246B /* Data.swift in Sources */,
 				4C3E893C2314689300365666 /* IconTextField.swift in Sources */,
 				4C3E893A2314684B00365666 /* SearchViewController.swift in Sources */,
 				4C3E8940231469CF00365666 /* UIColor+Extension.swift in Sources */,

@@ -9,11 +9,11 @@
 import UIKit
 
 protocol IconTextFieldDelegate {
-    func didStartTyping(id: String, text: String)
-    func didEndTyping(id: String, text: String)
-    func textDidChange(id: String, text: String)
-    func didReturnText(id: String, text: String)
-    func didClearText(id: String)
+    func didStartTyping(text: String)
+    func didEndTyping(text: String)
+    func textDidChange(text: String)
+    func didReturnText(text: String)
+    func didClearText()
 }
 
 class IconTextField: UIView, UITextFieldDelegate {
@@ -32,7 +32,6 @@ class IconTextField: UIView, UITextFieldDelegate {
         }
     }
     
-    var id: String = "icon_text_field"
     var icon: String?
     var iconSize: CGFloat = 40
     var placeholder: String?
@@ -121,27 +120,30 @@ class IconTextField: UIView, UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        self.delegate?.didStartTyping(id: id, text: textField.text!)
+        self.delegate?.didStartTyping(text: textField.text!)
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        self.delegate?.didEndTyping(id: id, text: textField.text!)
+        self.delegate?.didEndTyping(text: textField.text!)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.delegate?.didReturnText(id: id, text: textField.text!)
+        self.delegate?.didReturnText(text: textField.text!)
         textField.resignFirstResponder()
         return false
     }
     
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
-        self.delegate?.didClearText(id: id)
+        DispatchQueue.main.async {
+            self.delegate?.didClearText()
+            textField.resignFirstResponder()
+        }
         return true
     }
     
     @objc
     func textChanged(_ textField: UITextField){
-        self.delegate?.textDidChange(id: id, text: textField.text!)
+        self.delegate?.textDidChange(text: textField.text!)
     }
     
 }
